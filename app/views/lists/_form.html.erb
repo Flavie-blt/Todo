@@ -1,19 +1,5 @@
-<%= form_with(model: list) do |form| %>
-  <% if list.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(list.errors.count, "error") %> prohibited this list from being saved:</h2>
-
-      <ul>
-        <% list.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul> 
-  <% end %>
-  # <form class="d-flex">
-  # <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-  # <button class="btn btn-outline-secondary" type="submit">Search</button>
-  # </form>  
-          
-  <div class="field">
-  <%= form.text_field :name %> 
+<%= simple_form_for list do |f| %>
+  <%= f.input :description %>
+  <%= f.input :completed %>
+  <%= f.button :submit %>
 <% end %>
